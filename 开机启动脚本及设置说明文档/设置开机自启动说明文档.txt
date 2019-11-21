@@ -1,0 +1,68 @@
+15.128.21.192
+	1、上传start_192.sh
+		传路很如：/home/bocom/start_192.sh
+		
+	2、查看上传文件的所属用户和所属组
+		命令：ll start_192.sh
+		192上此文件所属用户和所属组应该是bocom bocom  （如果发现所属用户和所属组非bocom，需用root用户将文件所属主和所属组进行更改：chown bocom.bocom start_192.sh）
+		
+	3、给文件加可执行权限
+		chmod +x start_192.sh
+		
+	4、切换到root用户
+		执行 sudo su -
+		
+	5、编辑/etc/rc.d/rc.local
+		在最后添加：
+			/usr/local/nginx/sbin/nginx –c /usr/local/nginx/conf/nginx.conf
+			/usr/local/redis/redis-server /usr/local/redis/redis.conf
+			su - bocom -c "/home/bocom/start_192.sh"
+		
+	6、赋权
+		chmod +x /etc/rc.d/rc.local
+
+15.128.21.193
+	1、上传start_193.sh
+		传路很如：/home/bocom/start_193.sh
+		
+	2、查看上传文件的所属用户和所属组
+		命令：ll start_193.sh
+		193上此文件所属用户和所属组应该是bocom bocom   （如果发现所属用户和所属组非bocom，需用root用户将文件所属主和所属组进行更改：chown bocom.bocom start_193.sh）
+		
+	3、给文件加可执行权限
+		chmod +x start_193.sh
+		
+	4、切换到root用户
+		执行 sudo su -
+		
+	5、编辑/etc/rc.d/rc.local
+		在最后添加：
+			su - bocom -c "/home/bocom/start_193.sh"
+		
+	6、赋权
+		chmod +x /etc/rc.d/rc.local
+	
+		
+15.128.22.17
+	1、上传start_17.sh文件至服务器。
+		如：/root/start_17.sh
+		
+	2、查看上传文件的所属用户和所属组
+	
+		命令：ll start_17.sh
+		17上此文件所属用户和所属组应该是root root
+		
+	3、给文件加可执行权限
+		chmod +x start_17.sh
+		
+	4、切换到root用户
+		192、193上直接执行 sudo su - 进行切换
+		17不用切换
+		
+	5、编辑/etc/rc.d/rc.local
+		在最后添加：/root/start_17.sh
+		
+	6、赋权
+		chmod +x /etc/rc.d/rc.local
+	
+	
